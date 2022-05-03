@@ -32,11 +32,11 @@ export default function middleware(req: NextRequest) {
 
   console.log({ currentHost });
 
-  // if (!pathname.includes(".") && !pathname.startsWith("/api")) {
-  //   url.pathname = `/_sites/${currentHost}${pathname}`;
-  //   return NextResponse.rewrite(url);
+  if (!pathname.includes(".") && !pathname.startsWith("/api")) {
+    url.pathname = `/_sites/${currentHost}${pathname}`;
+    return NextResponse.rewrite(url);
 
-  // }
+  }
 
   return NextResponse.rewrite(url);
 
