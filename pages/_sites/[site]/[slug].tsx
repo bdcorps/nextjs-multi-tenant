@@ -19,4 +19,14 @@ export async function getStaticProps({ params }: any) {
   };
 }
 
+export async function getStaticPaths() {
+  return {
+    paths: [
+      "/blog/first-post",
+      { params: { site: "sport", slug: "second-post" } },
+    ],
+    fallback: true,
+  };
+}
+
 export default Site;
