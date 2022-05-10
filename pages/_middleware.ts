@@ -27,6 +27,7 @@ export default function middleware(req: NextRequest) {
     process.env.NODE_ENV === "production" && process.env.VERCEL === "1" ?
       hostname
         .replace(`.nextjs-multi-tenant.vercel.app`, "")
+        .replace(`.milna.cc`, "")
       : hostname.replace(`.localhost:3000`, "");
 
 
